@@ -1,7 +1,11 @@
-var webdriver = require("selenium-webdriver");
+"use strict";
+
+let webdriver = require("selenium-webdriver"),
+    Page = require("./Page.js"),
+    page = new Page();
 
 function createDriver() {
-    var driver = new webdriver.Builder()
+    let driver = new webdriver.Builder()
         .usingServer('http://localhost:8888/wd/hub')
         .withCapabilities(webdriver.Capabilities.chrome())
         .build();
@@ -9,8 +13,9 @@ function createDriver() {
     return driver;
 }
 
-var driver = createDriver();
-driver.get("http://www.google.com");
+
+
+page.get();
 
 driver.getTitle().then(function (title) {
     console.log(title);
