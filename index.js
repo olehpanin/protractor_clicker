@@ -1,21 +1,13 @@
 "use strict";
 
-let webdriver = require("selenium-webdriver"),
-    Page = require("./Page.js"),
-    page = new Page();
-
-function createDriver() {
-    let driver = new webdriver.Builder()
-        .usingServer('http://localhost:8888/wd/hub')
-        .withCapabilities(webdriver.Capabilities.chrome())
-        .build();
-    driver.manage().timeouts().setScriptTimeout(10000);
-    return driver;
-}
-
-
+let Driver = require("./src/js/Driver.js"),
+    Page = require("./src/js/Page.js"),
+    driver = new Driver().instance,
+    page = new Page( driver );
 
 page.get();
+
+driver.sleep(10000);
 
 driver.getTitle().then(function (title) {
     console.log(title);
