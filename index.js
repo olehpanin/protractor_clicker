@@ -5,12 +5,9 @@ let Driver = require("./src/js/Driver.js"),
     driver = new Driver().instance,
     page = new Page( driver );
 
-page.get();
-
-driver.sleep(10000);
+page.getInCircle(20);
 
 driver.getTitle().then(function (title) {
     console.log(title);
 });
 
-driver.quit();
