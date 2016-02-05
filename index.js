@@ -5,7 +5,7 @@ let Driver = require("./src/js/Driver.js"),
     driver = new Driver().instance,
     page = new Page( driver );
 
-page.getInCircle(20);
+page.getInCircle(1000);
 
 driver.getTitle().then(function (title) {
     console.log(title);
