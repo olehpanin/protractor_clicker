@@ -4,9 +4,9 @@ let Q = require("q");
 
 class Page {
     constructor( driver ){
-        this.url = "https://www.youtube.com/watch?v=mh5Hl32307E"; //1208
+        this.url = "https://www.youtube.com/watch?v=A8qDSlrpkZM"; //39
         this.driver = driver;
-        this.timeToWait = 10000;
+        this.timeToWait = 24000;
         this.getInCircleTimeout = undefined;
     }
     get(){

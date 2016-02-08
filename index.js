@@ -10,4 +10,3 @@ page.getInCircle(1000);
 driver.getTitle().then(function (title) {
     console.log(title);
 });
-
