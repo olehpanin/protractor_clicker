@@ -1,11 +1,11 @@
 "use strict";
 
 let Driver = require("./src/js/Driver.js"),
-    Page = require("./src/js/Page.js"),
+    YoutubePage = require("./src/js/YoutubePage.js"),
     driver = new Driver().instance,
-    page = new Page( driver );
+    youtubePage = new YoutubePage( driver );
 
-page.getInCircle(1000);
+youtubePage.getInCircle(1);
 
 driver.getTitle().then(function (title) {
     console.log(title);
